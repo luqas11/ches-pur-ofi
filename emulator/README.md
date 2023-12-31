@@ -1,7 +1,7 @@
 ## Emulator
 
 #### How this works
-The Model 2 emulator calls the functions defined in the `daytona.lua` script during the game execution. That allows the development of additional features, integrated with the emulation lifecycle.
+The Model 2 emulator calls the functions defined in the `daytona.lua` script during the game execution. That allows the development of additional features, integrated with the emulation lifecycle.  
 In this case, the `daytona.lua` script reads the current car speed from the RAM address `0x00505198`, and sends it through the COM port as a string with the format `XXXa`, where *XXX* is the speed value and *a* is the line ending character. It gets the board's COM port number from a configuration file named `com_port.txt`, which has a single line string with the port name in the format `COMX`, with *X* as the port number.
 
 #### Configuration
