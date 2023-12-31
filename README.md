@@ -1,1 +1,7 @@
 # Ches Pur Ofi
+
+### What is this
+This project is the **firmware** and **PCB design** for the hardware interface between the [Sega Model 2](https://emulation.gametechwiki.com/index.php/Sega_Model_2) emulator and **a custom homemade cockpit** which has two **pedals**, a steering **wheel**, an H **shifter** and an analog **speedometer**. The idea is to play [Daytona USA](https://en.wikipedia.org/wiki/Daytona_USA) on the emulator while using the cockpit controls and to keep the speedometer pointer in sync with the game car speed. An [Arduino Leonardo](https://docs.arduino.cc/hardware/leonardo) board makes this interface possible, reading the input values and sending them to the PC as PC Joysick buttons and axes. Also, the board controls the servo that drives the speedometer pointer and processes the car speed value given by the emulator. Additionally, a custom PCB design simplifies the setup process, allowing the user to just plug the Leonardo into the PCB and play, without additional wiring.
+
+### How to use it
+While in the cockpit, plug the Leonardo pins to the board and the USB to the PC. Run the emulator from the `Daytona USA.bat` script, and specify the Leonardo COM port number when asked to. After that, the game shuld start with all the controls operational. Axes calibration process is explained in the `firmware` readme file, and is sometimes needed after a hardware change (i.e. after replacing potentiometers). In the top left corner an informative text shows the port connection status, and it's behavior is also explained in the `firmware` readme.
