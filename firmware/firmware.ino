@@ -52,7 +52,7 @@ void loop()
   accelerator = map(accelerator, 90, 180, 0, 1023);
 
   int brake = analogRead(A2);
-  brake = constrain(brake, 750, 940);
+  brake = constrain(brake, 760, 940);
   brake = map(brake, 760, 940, 0, 1023);
 
   if (DEBUG_MODE)
