@@ -1,4 +1,4 @@
-## Emulator
+# Emulator
 
 > [!IMPORTANT]  
 > Since the **SEGA Model 2 Emulator** has no license file and it's webpage is down, i can't link a reference to the original author to give credits. The README file states that the author is *ElSemi*, and it's page (currently down) is http://nebula.emulatronia.com.
