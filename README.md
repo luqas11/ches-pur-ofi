@@ -11,7 +11,7 @@ The repo has the following project components:
 ### How to use it
 While in the cockpit, plug the *Leonardo* to the board and the USB to the PC. Run the emulator from the `Daytona USA.bat` script, and specify the *Leonardo* COM port number when asked to. After that, the game shuld start with all the controls operational. Axes calibration process is explained in the `firmware` readme file, and is usually needed after a hardware change (i.e. after replacing potentiometers). In the top left corner an informative text shows the port connection status, and it's behavior is also explained in the `firmware` readme.
 
-### Screenshots
+### Some screenshots
 #### Gameplay with a successful connection to the *Leonardo* (notice the top-left corner text displaying the COM port name in green):
 ![Gameplay with successful connection](./screenshots/screenshot1.png)  
 
