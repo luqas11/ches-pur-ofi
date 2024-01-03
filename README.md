@@ -19,7 +19,7 @@ While in the cockpit, plug the Leonardo pins to the board and the USB to the PC.
 ![Gameplay with lost connection](./screenshots/screenshot2.png)  
 
 #### PCB layout:
-![PCB layout](./screenshots/screenshot3.png)  
+<img src="/screenshots/screenshot3.png" height="50%" width="50%">  
 
 #### PCB 3D model:
-![PCB 3D model](./screenshots/screenshot4.png)
+<img src="/screenshots/screenshot4.png" height="30%" width="30%">  
