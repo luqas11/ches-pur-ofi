@@ -653,7 +653,7 @@
     (property "Value" "Arduino_Leonardo" (at 107.95 105.664 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "custom_footprints:Arduino_Leonardo" (at 107.95 133.35 0)
+    (property "Footprint" "Custom_Footprints:Arduino_Leonardo" (at 107.95 133.35 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
     (property "Datasheet" "https://www.arduino.cc/en/Main/ArduinoBoardLeonardo" (at 107.95 133.35 0)
