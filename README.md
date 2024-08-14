@@ -19,7 +19,7 @@ While in the cockpit, plug the *Leonardo* to the board and the USB to the PC. Ru
 ![Gameplay with lost connection](./screenshots/screenshot2.png)  
 
 #### PCB layout:
-<img src="/screenshots/screenshot4.png" height="15%" width="15%">  
+<img src="/screenshots/screenshot4.png" height="30%" width="30%">  
 
 #### PCB 3D model:
-<img src="/screenshots/screenshot3.png" height="25%" width="25%">  
+<img src="/screenshots/screenshot3.png" height="50%" width="50%">  
