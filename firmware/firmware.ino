@@ -47,8 +47,8 @@ void loop() {
   accelerator = map(accelerator, 90, 180, 0, 1023);
 
   int brake = analogRead(A2);
-  brake = constrain(brake, 650, 750);
-  brake = map(brake, 650, 750, 0, 1023);
+  brake = constrain(brake, 760, 940);
+  brake = map(brake, 760, 940, 0, 1023);
 
   if (DEBUG_MODE) {
     // Print the raw input values in the serial monitor
