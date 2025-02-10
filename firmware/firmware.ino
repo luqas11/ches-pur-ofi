@@ -77,6 +77,9 @@ void loop() {
 
 // Sets the servo position for a given car speed value
 void setServoPosition(String speed) {
-  int angle = map(min(speed.toInt(), 340), 0, 340, 180, 0);
+  int offset = 6;
+  int maxSpeed = 334;
+  int angle = map(min(speed.toInt(), maxSpeed), 0, maxSpeed, 180 - offset, 0);
+  
   myServo.write(angle);
 }
