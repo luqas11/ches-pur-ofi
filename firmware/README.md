@@ -20,7 +20,7 @@ brake = map(brake, 750, 940, 0, 1023);
 ```  
 Similarily, the steering wheel raw reading is not acceptable for the axis emulation. Assuming that the wheel uses the whole potentiometer range, the only relevant value for calibration is the centering. Even if it's using the whole range, the center is sometimes mechanically deviated, so by specifying the center raw value the firmware calculates the widest range it can work, centering and mapping it. For example:
 ```
-// A steering wheel is centered at the 525 raw value
+// A steering wheel is centered at the 525 raw value.
 // The firmware calculates the closest border to the center, and takes that distance as the maximum available range for both directions (this makes the final range centered).
 // After that, it constrains and maps the reading range to the new calculated range.
 int steering = analogRead(A0);
@@ -30,3 +30,14 @@ steering = constrain(steering, center - range, center + range);
 steering = map(steering, center - range, center + range, 0, 1023);
 ```
 
+### How to calibrate the speedometer
+For the speedometer, the received speed value must be mapped to a value between 180 and 0. Since the physical assembly of the speedometer could left the zero rotation pointer position slightly displaced from the zero number in the graphic scale, this offset must be considered. Since the servo range is limited to 180°, the scale speed value at the maximum rotation must be used for the value mapping. For example:
+```
+// When the servo is set to zero speed, the pointer is displaced by 6 degrees from the zero mark in the scale.
+// An offset of 6 degrees is added to the minimum rotation value.
+// With the offset applied, rotating the servo to its maximum position leaves the pointer at the 334 mark of the scale.
+// The maximum value for the speed mapping is set to 334.
+int offset = 6;
+int maxSpeed = 334;
+int angle = map(min(speed.toInt(), maxSpeed), 0, maxSpeed, 180 - offset, 0);
+```
