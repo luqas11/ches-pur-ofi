@@ -12,7 +12,7 @@ The analog inputs are constrained to the effective range of the raw values of th
 For the pedals, the effective range must be specified in the firmware to make it work properly. For example:
 ```
 // A brake pedal works between the raw values of 730 and 960.
-// The firmware contrains it to a smaller range to add a tolerance margin, for example between 750 and 940.
+// The firmware constrains it to a smaller range to add a tolerance margin, for example between 750 and 940.
 // After that, it maps that range to a 0-1023 range to make the Joystick library perform a full range axis movement.
 int brake = analogRead(A2);
 brake = constrain(brake, 750, 940);
@@ -31,12 +31,12 @@ steering = map(steering, center - range, center + range, 0, 1023);
 ```
 
 ### How to calibrate the speedometer
-For the speedometer, the received speed value must be mapped to a value between 180 and 0. Since the physical assembly of the speedometer could left the zero rotation pointer position slightly displaced from the zero number in the graphic scale, this offset must be considered. Since the servo range is limited to 180°, the scale speed value at the maximum rotation must be used for the value mapping. For example:
+For the speedometer, since the rotation range of the servo is 180°, the received speed value must be mapped to a value between 180 and 0. The physical assembly of the speedometer could left the zero rotation point slightly displaced from the zero mark in the graphic scale, so an offset must be considered to correct it. At the maximum rotation point, the pointer will be at an arbitrary speed value, that will be the maximum speed value to be used in the speed range mapping. For example:
 ```
-// When the servo is set to zero speed, the pointer is displaced by 6 degrees from the zero mark in the scale.
-// An offset of 6 degrees is added to the minimum rotation value.
-// With the offset applied, rotating the servo to its maximum position leaves the pointer at the 334 mark of the scale.
-// The maximum value for the speed mapping is set to 334.
+// When the servo is set to zero rotation, the pointer is displaced by 6 degrees from the zero speed mark in the scale.
+// An offset of 6 degrees is added to the minimum rotation value, so it will rotate between 180 - offset and 0 (180 means minimum rotation because the servo rotation direction is the opossite of the scale increasing direction).
+// With the offset applied, rotating the servo to its maximum rotation point leaves the pointer at the 334 speed mark of the scale.
+// The maximum speed value for the speed mapping is set to 334, to match the 0-334 effective range of the pointer over the scale.
 int offset = 6;
 int maxSpeed = 334;
 int angle = map(min(speed.toInt(), maxSpeed), 0, maxSpeed, 180 - offset, 0);
