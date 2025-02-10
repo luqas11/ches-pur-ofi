@@ -18,7 +18,7 @@ int brake = analogRead(A2);
 brake = constrain(brake, 750, 940);
 brake = map(brake, 750, 940, 0, 1023);
 ```  
-Similarily, the steering wheel raw reading is not acceptable for the axis emulation. Assuming that the wheel uses the whole potentiometer range, the only relevant value for calibration is the centering. Even if it's using the whole range, the center is sometimes mechanically deviated, so by specifying the center raw value the firmware calculates the widest range it can work, centering and mapping it. For example:
+Similarily, the steering wheel raw reading is not acceptable for the axis emulation. Assuming that the wheel uses the whole potentiometer range, the only relevant value for calibration is the centering. The center is sometimes mechanically deviated, so by specifying the center raw value the firmware calculates the widest range it can work, centering and mapping it. For example:
 ```
 // A steering wheel is centered at the 525 raw value.
 // The firmware calculates the closest border to the center, and takes that distance as the maximum available range for both directions (this makes the final range centered).
@@ -31,7 +31,7 @@ steering = map(steering, center - range, center + range, 0, 1023);
 ```
 
 ### How to calibrate the speedometer
-For the speedometer, since the rotation range of the servo is 180°, the received speed value must be mapped to a value between 180 and 0. The physical assembly of the speedometer could left the zero rotation point slightly displaced from the zero mark in the graphic scale, so an offset must be considered to correct it. At the maximum rotation point, the pointer will be at an arbitrary speed value, that will be the maximum speed value to be used in the speed range mapping. For example:
+For the speedometer, since the rotation range of the servo is 180°, the received speed value must be mapped to a value between 180 and 0. The physical assembly of the speedometer could left the zero rotation point slightly displaced from the zero mark in the graphic scale, so an offset must be considered to correct it. At the maximum rotation point, the pointer will be at an arbitrary speed value, and that will be the maximum speed value to be used in the speed range mapping. For example:
 ```
 // When the servo is set to zero rotation, the pointer is displaced by 6 degrees from the zero speed mark in the scale.
 // An offset of 6 degrees is added to the minimum rotation value, so it will rotate between 180 - offset and 0 (180 means minimum rotation because the servo rotation direction is the opossite of the scale increasing direction).
