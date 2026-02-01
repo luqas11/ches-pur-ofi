@@ -43,8 +43,8 @@ void loop() {
   steering = map(steering, center - range, center + range, 0, 1023);
 
   int accelerator = analogRead(A1);
-  accelerator = constrain(accelerator, 90, 180);
-  accelerator = map(accelerator, 90, 180, 0, 1023);
+  accelerator = constrain(accelerator, 90, 130);
+  accelerator = map(accelerator, 90, 130, 0, 1023);
 
   int brake = analogRead(A2);
   brake = constrain(brake, 760, 940);
